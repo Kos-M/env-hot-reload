@@ -14,6 +14,10 @@ new envHotReloader({
     onEnvChange: myFunctToCall, // optionall
     watchInterval: 1500  // optionall default 3500
    }).watch()
+// user callback function  
+function myFunctToCall() {
+    // your code to run on .env is updated...
+  }
 ```
 
  ## oR

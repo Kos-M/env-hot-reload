@@ -1,10 +1,17 @@
 {
   "name": "env-hot-reload",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A small wrapper for watch changes in .env files , changes in  .env auto parsed in process.env",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Kos-M/env-hot-reload.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Kos-M/env-hot-reload/issues"
   },
   "keywords": ["dotenv", "envreload", "reload env", "hotreload .env","populate .env live", "update .env without restart"],
   "author": "Kostas Mpoukouvalas",

@@ -4,7 +4,7 @@ const watchFile = fs.watchFile
 
 class envHotReloader {
     constructor({ onEnvChange  , watchInterval }){
-        this.watchInterval = watchInterval || 3500; //3.5 sec
+        this.watchInterval = watchInterval || 3500; // 3.5 seconds
         this.userExtraCB = onEnvChange || null
         this.onChange = this.onChange.bind(this)
         dotenv.config()
@@ -48,59 +48,3 @@ class envHotReloader {
 
 }
 module.exports = envHotReloader
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// const onChange = (curr, prev) => {
-//     // console.log(`the current mtime is: ${curr.mtime}`);
-//     // console.log(`the previous mtime was: ${prev.mtime}`);
-//     result = dotenv.config()
-//     if (result.error) {
-//         throw result.error
-//     }
-//     // console.log(result)
-//     const keys = Object.keys(result.parsed)
-//     // const values = Object.values(result.parsed)
-//         keys.forEach(x => {
-//             let val = result.parsed[x]
-//             console.log(`${x}:${result.parsed[x]}`)
-//             process.env[x] = val
-//         });
-//         // console.log('chaned var: ',process.env.var1)
-// }
-
-
-// function watch({ interv = 5000}) {
-//     watchFile(process.cwd()+ '/.env',{interval:interv},   onChange.bind(this) );
-    
-//     return onChange
-// }
-// // console.log(process.env.var1)
-
-
-
-// module.exports.watch =   watch 
