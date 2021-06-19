@@ -1,6 +1,6 @@
 {
   "name": "env-hot-reload",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "A small wrapper for watch changes in .env files , changes in  .env auto parsed in process.env",
   "main": "index.js",
   "scripts": {

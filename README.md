@@ -1,5 +1,9 @@
 # env-hot-reload
 
+[![npm version](https://img.shields.io/npm/v/env-hot-reload.svg?style=flat)](https://www.npmjs.com/package/env-hot-reload)
+[![npm downloads](https://img.shields.io/npm/dm/env-hot-reload.svg?style=flat)](https://www.npmjs.com/package/env-hot-reload)
+[![GitHub issues](https://img.shields.io/github/issues/Kos-M/env-hot-reload.svg?style=flat)](https://github.com/Kos-M/env-hot-reload/issues)
+
 ### This small lib offers you the ability to edit your .env files without the need to restart the process.
 
 ## env-hot-reload is watching your .env for you!
@@ -11,10 +15,10 @@
 ```js
 const  envHotReloader = require('env-hot-reload');
 new envHotReloader({
-    onEnvChange: myFunctToCall, // optionall
+    onEnvChange: myFunctToCall, // optionall callback function runs on every .env update
     watchInterval: 1500  // optionall default 3500
    }).watch()
-// user callback function  
+
 function myFunctToCall() {
     // your code to run on .env is updated...
   }
@@ -23,14 +27,15 @@ function myFunctToCall() {
  ## oR
 
 ```js
+const  envHotReloader = require('env-hot-reload');
   const config = {
-        onEnvChange: myFunctToCall, // optionall
+        onEnvChange: myFunctToCall, // optionall callback Function runs on every .env update
         watchInterval: 1500  // optionall default 3500
   }
-  const monitor = new env-hot-reload(config) 
+  const monitor = new envHotReloader(config) 
   monitor.watch();
-// user callback function  
+
 function myFunctToCall() {
-    // your code to run on .env is updated...
+    // your code to run when .env is updated...
   }
 ```
