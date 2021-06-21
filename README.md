@@ -8,6 +8,9 @@
 
 ## env-hot-reload is watching your .env for you!
    `process.env.YourVars will auto updated every time you save .env file.`
+
+<img src="https://raw.githubusercontent.com/Kos-M/env-hot-reload/master/examples/demo.svg">
+
 ## QuickStart
 
 - `npm install env-hot-reload` or `yarn add env-hot-reload`
