@@ -65,11 +65,9 @@ class envHotReloader {
       }
       if (cached.hash !== parsedMd5sum) { // value of var has changed
         // update our chached values with new ones
-        const changedIndex = this.envContents.findIndex((obj, index) => {
-          if (obj.key === parsedKey) return index;
-        });
-        this.envContents[changedIndex] = { key: parsedKey, hash: parsedMd5sum };
-        if (isNew) this.logger(`\x1b[32m+ \x1b[0mAdded Environment Variable \x1b[32m${parsedKey}\x1b[0m`);
+        const changedIndex = this.envContents.findIndex((obj) => obj.key === parsedKey);
+        this.envContents[changedIndex].hash = parsedMd5sum; // update new hash (only value changed)
+        if (isNew) this.logger(`\x1b[32m+ \x1b[0mAdded Environment Variable \x1b[32m${parsedKey}=${parsedVal}\x1b[0m`);
         else this.logger(`\x1b[32m+\x1b[0m/\x1b[34m- \x1b[0mModified Environment Variable \x1b[33m${parsedKey}=\x1b[32m${parsedVal}\x1b[0m`);
       }
       isNew = false;
