@@ -7,17 +7,19 @@
 const app = require('../app');
 const debug = require('debug')('expressAppServer:server');
 const http = require('http');
-const envHotReloader = require('../../../index');
+const EnvHotReloader = require('../../../index');
 
 const config = {
-  onEnvChange: myFunctToCall, // optionall
+  onEnvChange: () => {
+    console.log('just a callback');
+  }, // optionall
   watchInterval: 500, // optionall default 3500
 };
-const monitor = new envHotReloader(config);
-monitor.watch();
+const monitor = new EnvHotReloader().watch();
+// new EnvHotReloader(config).watch();
 
 function myFunctToCall() {
-  console.log('-----user---function---trigered');
+  // console.log('-----user---function---trigered');
   server.close(); // restarting express server
   app.set('port', port);
   server.listen(process.env.PORT);

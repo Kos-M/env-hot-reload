@@ -5,9 +5,9 @@ const { watchFile } = fs;
 const crypto = require('crypto');
 
 class envHotReloader {
-  constructor({ onEnvChange, watchInterval }) {
-    this.watchInterval = watchInterval || 3500; // 3.5 seconds
-    this.userExtraCB = onEnvChange || null;
+  constructor(config) {
+    this.watchInterval = config?.watchInterval || 3500; // 3.5 seconds
+    this.userExtraCB = config?.onEnvChange || null;
     this.quiet = false; // TODO : give user choise to load it from config , a silent mode
     this.envContents = envHotReloader.initParseEnv(); // array of init user env variables
     this.onChange = this.onChange.bind(this);
